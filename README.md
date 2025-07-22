@@ -17,7 +17,7 @@ O projeto implementa uma arquitetura de Data Lakehouse moderna, onde os dados fl
 ```mermaid
 graph TD
     subgraph "Fonte de Dados"
-        A[Binance WebSocket API]
+        A[Source]
     end
 
     subgraph "Camada de Ingestão"
@@ -25,6 +25,13 @@ graph TD
     end
 
     subgraph "Camada de Processamento e Armazenamento (Lakehouse)"
+        %% Nó invisível para criar espaço para o título %%
+        direction LR
+        subgraph ESPACO [ ]
+            direction TB
+        end
+        style ESPACO fill:none,stroke:none
+
         D[Apache Spark];
         E[Apache Iceberg];
         F[MinIO S3];
@@ -147,5 +154,10 @@ Siga os passos abaixo para iniciar o pipeline completo na sua máquina.
 ## 🤝 Como Contribuir
 
 Este projeto segue um fluxo de trabalho estruturado para garantir a qualidade do código. Todas as contribuições são bem-vindas.
+
+O fluxo utiliza 3 tipos de branches principais:
+* **`main`**: Contém as versões estáveis e de produção (releases com tags).
+* **`develop`**: Branch de integração para funcionalidades completas. Deve estar sempre estável.
+* **`feature/*`**: Branches de trabalho para cada nova funcionalidade ou correção, onde o desenvolvimento do dia a dia acontece.
 
 Para detalhes sobre nosso fluxo com Git Flow, padrões de commit e outras diretrizes, por favor, consulte o nosso **[Guia de Contribuição](CONTRIBUTING.md)**.
