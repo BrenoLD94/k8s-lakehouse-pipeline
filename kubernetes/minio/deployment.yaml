@@ -15,37 +15,37 @@ spec:
       # A etiqueta que o selector acima está procurando
       labels:
         app: minio
-  spec:
-    containers:
-      - name: minio
-        image: minio/minio:RELEASE.2024-07-20T00-01-20Z
-        args:
-        - server
-        - /data
-        - --console-address 
-        - ":9001"
-        resources:
-           # mínimo de recursos que o contêiner precisa garantido para funcionar
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          # O máximo de recursos que o contêiner pode consumir
-          limits:
-            memory: "1Gi"
-            cpu: "1"
-        env:
-        - name: MINIO_ROOT_USER
-          value: "breno"
-        - name: MINIO_ROOT_PASSWORD
-          value: "admin2025"
-        ports:
-          - containerPort: 9000
-          - containerPort: 9001
-        # liga volume a pasta /data
-        volumeMounts:
-        - name: minio-data 
-          mountPath: /data
-    volumes:
-    - name: minio-data
-      persistentVolumeClaim:
-        claimName: minio-pvc
+    spec:
+      containers:
+        - name: minio
+          image: minio/minio:RELEASE.2024-07-20T00-01-20Z
+          args:
+          - server
+          - /data
+          - --console-address 
+          - ":9001"
+          resources:
+             # mínimo de recursos que o contêiner precisa garantido para funcionar
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            # O máximo de recursos que o contêiner pode consumir
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+          env:
+          - name: MINIO_ROOT_USER
+            value: "breno"
+          - name: MINIO_ROOT_PASSWORD
+            value: "admin2025"
+          ports:
+            - containerPort: 9000
+            - containerPort: 9001
+          # liga volume a pasta /data
+          volumeMounts:
+          - name: minio-data 
+            mountPath: /data
+      volumes:
+      - name: minio-data
+        persistentVolumeClaim:
+          claimName: minio-pvc
