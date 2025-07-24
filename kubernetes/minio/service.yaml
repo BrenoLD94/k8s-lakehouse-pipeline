@@ -4,6 +4,7 @@ metadata:
   name: minio-service
   namespace: lakehouse
 spec:
+  type: NodePort # for test purpose
   selector: 
     app: minio
   ports:
