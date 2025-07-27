@@ -12,8 +12,8 @@ minikube kubectl -- port-forward --namespace lakehouse svc/minio-service 9001:90
 
 # --- Spark ---
 # Expõe a UI do Spark Master na porta 8088
-echo "Encaminhando Spark Master UI -> http://localhost:8088"
-minikube kubectl -- port-forward --namespace lakehouse svc/spark-master-svc 8088:80 &
+echo "Encaminhando Spark Master UI -> http://localhost:8080"
+minikube kubectl -- port-forward --namespace lakehouse svc/spark-master-svc 8080:80 &
 
 
 echo "--------------------------------------------------------"

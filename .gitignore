@@ -15,5 +15,5 @@ secrets.env
 *.local
 .env
 
-scripts/ssh-tunnel-all.sh
+scripts/ssh-tunnel-all.*
 scripts/install-charts.sh

@@ -1,0 +1,13 @@
+# kubernetes/postgres/postgres-helm-values.yaml
+
+auth:
+  # postgresl custom database
+  database: "teste"
+  # postgres Custom user password
+  password: "admin2025"
+  # postgres Custom user name
+  username: "breno"
+  # postgres admin user password
+  postgresPassword: "admin2025"
+  # enable admin postgres user
+  enablePostgresUser: true
