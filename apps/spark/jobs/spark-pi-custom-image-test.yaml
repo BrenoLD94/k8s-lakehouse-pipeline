@@ -1,0 +1,27 @@
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: spark-pi-custom-test
+  namespace: lakehouse
+spec:
+  type: Python
+  mode: cluster
+
+  image: "k8s-lakehouse/spark:3.5.6-v1"
+  imagePullPolicy: IfNotPresent
+
+  mainApplicationFile: local:///opt/spark/examples/src/main/python/pi.py
+  sparkVersion: 3.5.6
+
+  restartPolicy:
+    type: Never
+  
+  driver:
+    cores: 1
+    memory: "512m"
+    serviceAccount: default
+  
+  executor:
+    cores: 1
+    instances: 2
+    memory: "512m"
