@@ -12,14 +12,14 @@ spec:
 
   mainApplicationFile: local:///opt/spark/examples/src/main/python/pi.py
   sparkVersion: 3.5.6
-
+  
   restartPolicy:
     type: Never
   
   driver:
     cores: 1
     memory: "512m"
-    serviceAccount: default
+    serviceAccount: spark-operator-spark
   
   executor:
     cores: 1

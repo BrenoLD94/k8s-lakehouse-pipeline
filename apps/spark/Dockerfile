@@ -9,5 +9,8 @@ WORKDIR /opt/spark/work-dir
 # Copia TODOS os JARs da pasta de dependências local para a pasta de JARs do Spark na imagem.
 COPY --chown=spark:spark ./apps/spark/dependencies/*.jar /opt/spark/jars/
 
+# Copia o script para dentro da pasta do container
+COPY --chown=spark:spark ./apps/spark/scripts/*.py /opt/spark/work-dir/app/
+
 # troca para o usuario não-root
 USER spark
