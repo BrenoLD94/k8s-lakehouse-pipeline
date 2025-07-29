@@ -1,7 +1,7 @@
 # apps/spark/Dockerfile
 
 # Usamos a imagem oficial do Docker
-FROM spark:3.5.6-scala2.12-java17-ubuntu
+FROM spark:3.5.6-scala2.12-java17-python3-ubuntu
 
 # Define o diretório de trabalho padrão
 WORKDIR /opt/spark/work-dir
