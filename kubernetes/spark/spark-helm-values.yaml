@@ -1,9 +1,0 @@
-# kubernetes/spark/spark-helm-values.yaml
-
-master:
-  replicaCount: 1
-  service:
-    type: NodePort
-
-worker:
-  replicaCount: 1

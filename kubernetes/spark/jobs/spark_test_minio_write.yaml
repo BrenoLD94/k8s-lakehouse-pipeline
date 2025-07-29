@@ -1,7 +1,7 @@
 apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: SparkApplication
 metadata:
-  name: spark-pi-custom-test
+  name: spark-minio-write-test
   namespace: lakehouse
 spec:
   type: Python

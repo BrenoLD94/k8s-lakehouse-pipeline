@@ -15,6 +15,10 @@ minikube kubectl -- port-forward --namespace lakehouse svc/minio-service 9001:90
 echo "Encaminhando Spark Master UI -> http://localhost:8080"
 minikube kubectl -- port-forward --namespace lakehouse svc/spark-master-svc 8080:80 &
 
+# --- postgres ---
+# Expõe uma porta do postgres 5432
+echo "Encaminhando porta do PostgreSQL -> localhost:5432 (use com um cliente de BD)"
+minikube kubectl -- port-forward --namespace lakehouse svc/postgres-postgresql 5432:5432 &
 
 echo "--------------------------------------------------------"
 echo "Túneis iniciados em segundo plano."

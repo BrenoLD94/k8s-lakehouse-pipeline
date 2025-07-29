@@ -17,3 +17,5 @@ secrets.env
 
 scripts/ssh-tunnel-all.*
 scripts/install-charts.sh
+
+apps/spark/dependencies/*.jar
