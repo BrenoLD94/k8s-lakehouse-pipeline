@@ -14,8 +14,8 @@ spec:
   sparkVersion: 3.5.6
   sparkConf:
     "spark.hadoop.fs.s3a.endpoint": "http://minio-service.lakehouse.svc.cluster.local:9000"
-    "spark.hadoop.fs.s3a.access.key": "WjTb9sqkVsZ1KgK7A4Ay" # TODO: PARA PROD PRECISARÁ FICAR EM SECRETS
-    "spark.hadoop.fs.s3a.secret.key": "kfYodK6w0mIzKKJaQrfQN4lYIUe03ENDViy1sZmn" # TODO: PARA PROD PRECISARÁ FICAR EM SECRETS
+    "spark.hadoop.fs.s3a.access.key": "Ysh8lpSgpp9YO3oRLkkK" # TODO: PARA PROD PRECISARÁ FICAR EM SECRETS
+    "spark.hadoop.fs.s3a.secret.key": "sSkln1c0sxRFT4hO24XRs1TfvVPys37VY5dGDJCq" # TODO: PARA PROD PRECISARÁ FICAR EM SECRETS
     "spark.hadoop.fs.s3a.path.style.access": "true"
     "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem"
   
