@@ -18,10 +18,11 @@ spec:
     "spark.hadoop.fs.s3a.secret.key": "minio123" #"sSkln1c0sxRFT4hO24XRs1TfvVPys37VY5dGDJCq"
     "spark.hadoop.fs.s3a.path.style.access": "true"
     "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem"
-    "spark.hadoop.fs.s3a.connection.ssl.enabled": "false"
-    "spark.hadoop.fs.sde.a.connection.ssl.certificate-check": "false" 
+    "spark.hadoop.fs.s3a.connection.ssl.enabled": "true"
+    "spark.hadoop.fs.s3a.connection.ssl.certificate-check": "false" 
     "spark.hadoop.fs.s3a.connection.timeout": "30000"
-    "spark.network.timeout": "40s"
+    "spark.hadoop.fs.s3a.aws.credentials.provider": "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider"
+
 
   restartPolicy:
     type: Never
