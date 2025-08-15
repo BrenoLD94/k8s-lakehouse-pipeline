@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hive-metastore-deployment
+  namespace: lakehouse
+spec:
+  replicas: 1
+  Selector: 
+    matchLabels:
+      app: hive-metastore
+  template:
+    metadata:
+      labels:
+        app: hive-metastore
+    spec:
+      ports:
+        - port: 9083
+      containers:
+        - name: hive-metastore
+          image: apache/hive:4.0.0
+          env:
+          - name: SERVICE_NAME
+            value: metastore 
+          - name: DB_DRIVER
+            value: postgres
+          - name: SERVICE_OPTS
+            value: "-Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db -Djavax.jdo.option.ConnectionUserName=hive -Djavax.jdo.option.ConnectionPassword=password"

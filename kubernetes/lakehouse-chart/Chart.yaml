@@ -1,0 +1,17 @@
+apiVersion: v2
+name: lakehouse-chart
+description: Chart umbrella para lakehouse
+version: 0.1.0
+
+dependencies:
+  - name: operator
+    version: "7.1.1"
+    repository: "https://operator.min.io"
+    alias: minio-operator
+
+
+
+# https://www.freecodecamp.org/portuguese/news/o-que-e-um-helm-chart-um-tutorial-para-iniciantes-no-kubernetes/
+# https://www.datacamp.com/pt/tutorial/kubernetes
+# helm lint e helm template
+
